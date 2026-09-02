@@ -1,0 +1,38 @@
+# User specific files
+message.txt
+*.pdf
+prog/prog-2026-2027/
+
+# Node / JS dependencies
+node_modules/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Testing & Coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# IDE & Editor files
+.idea/
+*.iml
+.obsidian/
+!.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS artifacts
+Thumbs.db
+.DS_Store

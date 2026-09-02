@@ -1,0 +1,24 @@
+{
+  "name": "compprog-sandbox-python",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format:json": "prettier \"**/*.json\" --config .prettierrc.json",
+    "format:json:check": "prettier \"**/*.json\" --config .prettierrc.json --check",
+    "format:md": "prettier \"**/*.md\" --config .prettierrc.json --write",
+    "format:md:check": "prettier \"**/*.md\" --config .prettierrc.json --check",
+    "format": "npm run format:json && npm run format:md",
+    "format:check": "npm run format:json:check && npm run format:md:check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gitlab-dfotopoulos:ntua-emp/chemeng/pc-lab-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prettier": "^3.7.1"
+  }
+}

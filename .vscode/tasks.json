@@ -1,0 +1,95 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🐍 Run Lists CLI Demo",
+      "type": "shell",
+      "command": "uv run src/data_structures/lists.py demo",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "⚙️ Run Lists CLI Subcommand (Custom Args)",
+      "type": "shell",
+      "command": "uv run src/data_structures/lists.py ${input:taskCliArgs}",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🧪 Run Pytest with 100% Coverage",
+      "type": "shell",
+      "command": "uv run pytest --cov=data_structures.lists --cov-report=term-missing test/data_structures/test_lists.py",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "📦 UV: Sync Dependencies (.venv)",
+      "type": "shell",
+      "command": "uv sync --python python",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "✨ Format Code & Docs (Prettier)",
+      "type": "shell",
+      "command": "pnpm run format",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🔍 Lint Code (Ruff)",
+      "type": "shell",
+      "command": "uv run ruff check src/ test/",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🛡️ Static Type Check (Mypy)",
+      "type": "shell",
+      "command": "uv run mypy src/",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "taskCliArgs",
+      "type": "promptString",
+      "description": "Enter subcommands and flags (e.g. 'stats --elements 10,20,30 --json' or 'filter --elements 1,2,3,4 --filter-strategy evens'):",
+      "default": "stats --elements 10,20,30,40,50"
+    }
+  ]
+}
