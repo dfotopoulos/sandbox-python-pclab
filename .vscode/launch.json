@@ -2,73 +2,204 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "🐍 Python: Lists CLI Demo",
+      "name": "🎓 Example List 001 (Interactive Input Prompt)",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/src/data_structures/lists.py",
-      "args": ["demo"],
+      "program": "${workspaceFolder}/src/tutorial/list/example_list_001/example_list_001.py",
+      "args": ["${input:exampleList001Args}"],
       "console": "integratedTerminal",
       "justMyCode": true,
-      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
-      "cwd": "${workspaceFolder}"
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "linux": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      },
+      "osx": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      }
     },
     {
-      "name": "⚙️ Python: Lists CLI (Prompt for Subcommand & Args)",
+      "name": "🎓 Example List 001 (Sort Nick, Filippos, Dimitra)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/tutorial/list/example_list_001/example_list_001.py",
+      "args": ["--data", "Nick", "Filippos", "Dimitra", "--sort"],
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "linux": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      },
+      "osx": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      }
+    },
+    {
+      "name": "🎓 Example List 001 (Sort Dimitrios, James, John)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/tutorial/list/example_list_001/example_list_001.py",
+      "args": ["--data", "Dimitrios", "James", "John", "--sort"],
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "linux": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      },
+      "osx": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      }
+    },
+    {
+      "name": "🐍 Lists CLI (Interactive Subcommand Prompt)",
       "type": "python",
       "request": "launch",
       "program": "${workspaceFolder}/src/data_structures/lists.py",
       "args": ["${input:listsCliArgs}"],
       "console": "integratedTerminal",
       "justMyCode": true,
-      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
-      "cwd": "${workspaceFolder}"
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "linux": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      },
+      "osx": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      }
     },
     {
-      "name": "📄 Python: Run/Debug Current File",
+      "name": "🐍 Lists CLI Demo (Showcase)",
       "type": "python",
       "request": "launch",
-      "program": "${file}",
+      "program": "${workspaceFolder}/src/data_structures/lists.py",
+      "args": ["demo"],
       "console": "integratedTerminal",
       "justMyCode": true,
-      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
-      "cwd": "${workspaceFolder}"
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "linux": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      },
+      "osx": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      }
     },
     {
-      "name": "🧪 Python: Debug Pytest (Current Test File)",
+      "name": "🧪 Pytest: Test Example List 001",
       "type": "python",
       "request": "launch",
       "module": "pytest",
       "args": [
-        "${file}",
+        "test/tutorial/list/example_list_001/test_example_list_001.py",
         "-v"
       ],
       "console": "integratedTerminal",
       "justMyCode": false,
-      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
-      "cwd": "${workspaceFolder}"
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "linux": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      },
+      "osx": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      }
     },
     {
-      "name": "📊 Python: Pytest Full Suite with 100% Coverage",
+      "name": "🧪 Pytest: Test Lists Manager",
       "type": "python",
       "request": "launch",
       "module": "pytest",
       "args": [
-        "--cov=data_structures.lists",
-        "--cov-report=term-missing",
-        "test/data_structures/test_lists.py"
+        "test/data_structures/test_lists.py",
+        "-v"
       ],
       "console": "integratedTerminal",
       "justMyCode": false,
-      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
-      "cwd": "${workspaceFolder}"
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "linux": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      },
+      "osx": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      }
+    },
+    {
+      "name": "📊 Pytest: Full Suite with 100% Coverage",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "--cov=src",
+        "--cov-report=term-missing",
+        "test/"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "windows": {
+        "python": "${workspaceFolder}/.venv/Scripts/python.exe"
+      },
+      "linux": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      },
+      "osx": {
+        "python": "${workspaceFolder}/.venv/bin/python"
+      }
     }
   ],
   "inputs": [
     {
+      "id": "exampleList001Args",
+      "type": "promptString",
+      "description": "Enter CLI flags for example_list_001 (e.g. '--data Nick Filippos Dimitra --sort'):",
+      "default": "--data Nick Filippos Dimitra --sort"
+    },
+    {
       "id": "listsCliArgs",
       "type": "promptString",
-      "description": "Enter subcommand & arguments (e.g. 'sort --elements banana,apple,fig --key length' or 'stats --elements 10,20,30'):",
-      "default": "sort --elements banana,apple,fig --key length"
+      "description": "Enter subcommand & arguments for lists.py (e.g. 'stats --elements 10,20,30,40' or 'demo'):",
+      "default": "stats --elements 10,20,30,40,50"
     }
   ]
 }

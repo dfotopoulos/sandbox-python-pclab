@@ -1,10 +1,68 @@
 {
   "version": "2.0.0",
+  "options": {
+    "cwd": "${workspaceFolder}"
+  },
   "tasks": [
     {
-      "label": "🐍 Run Lists CLI Demo",
+      "label": "🎓 Example List 001 (Interactive Input Prompt)",
       "type": "shell",
-      "command": "uv run src/data_structures/lists.py demo",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run src/tutorial/list/example_list_001/example_list_001.py ${input:exampleList001Args}",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🎓 Example List 001 (Sort Nick, Filippos, Dimitra)",
+      "type": "shell",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run src/tutorial/list/example_list_001/example_list_001.py --data Nick Filippos Dimitra --sort",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🎓 Example List 001 (Sort Dimitrios, James, John)",
+      "type": "shell",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run src/tutorial/list/example_list_001/example_list_001.py --data Dimitrios James John --sort",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🎓 Example List 001 (Help)",
+      "type": "shell",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run src/tutorial/list/example_list_001/example_list_001.py --help",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🐍 Lists CLI (Interactive Subcommand Prompt)",
+      "type": "shell",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run src/data_structures/lists.py ${input:listsCliArgs}",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🐍 Lists CLI Demo (Showcase)",
+      "type": "shell",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run src/data_structures/lists.py demo",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -17,10 +75,9 @@
       "problemMatcher": []
     },
     {
-      "label": "⚙️ Run Lists CLI Subcommand (Custom Args)",
+      "label": "🧪 Pytest: Test Example List 001",
       "type": "shell",
-      "command": "uv run src/data_structures/lists.py ${input:taskCliArgs}",
-      "group": "build",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run pytest test/tutorial/list/example_list_001/test_example_list_001.py -v",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -29,9 +86,20 @@
       "problemMatcher": []
     },
     {
-      "label": "🧪 Run Pytest with 100% Coverage",
+      "label": "🧪 Pytest: Test Lists Manager",
       "type": "shell",
-      "command": "uv run pytest --cov=data_structures.lists --cov-report=term-missing test/data_structures/test_lists.py",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run pytest test/data_structures/test_lists.py -v",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "📊 Pytest: Full Suite with 100% Coverage",
+      "type": "shell",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run pytest --cov=src --cov-report=term-missing test/",
       "group": {
         "kind": "test",
         "isDefault": true
@@ -46,7 +114,7 @@
     {
       "label": "📦 UV: Sync Dependencies (.venv)",
       "type": "shell",
-      "command": "uv sync --python python",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' sync --python python",
       "presentation": {
         "reveal": "always",
         "panel": "shared"
@@ -56,7 +124,7 @@
     {
       "label": "✨ Format Code & Docs (Prettier)",
       "type": "shell",
-      "command": "pnpm run format",
+      "command": "Set-Location '${workspaceFolder}'; pnpm run format",
       "presentation": {
         "reveal": "always",
         "panel": "shared"
@@ -66,7 +134,7 @@
     {
       "label": "🔍 Lint Code (Ruff)",
       "type": "shell",
-      "command": "uv run ruff check src/ test/",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run ruff check src/ test/",
       "presentation": {
         "reveal": "always",
         "panel": "shared"
@@ -76,7 +144,7 @@
     {
       "label": "🛡️ Static Type Check (Mypy)",
       "type": "shell",
-      "command": "uv run mypy src/",
+      "command": "Set-Location '${workspaceFolder}'; uv --directory '${workspaceFolder}' run mypy src/",
       "presentation": {
         "reveal": "always",
         "panel": "shared"
@@ -86,9 +154,15 @@
   ],
   "inputs": [
     {
-      "id": "taskCliArgs",
+      "id": "exampleList001Args",
       "type": "promptString",
-      "description": "Enter subcommands and flags (e.g. 'stats --elements 10,20,30 --json' or 'filter --elements 1,2,3,4 --filter-strategy evens'):",
+      "description": "Enter CLI flags for example_list_001 (e.g. '--data Nick Filippos Dimitra --sort'):",
+      "default": "--data Nick Filippos Dimitra --sort"
+    },
+    {
+      "id": "listsCliArgs",
+      "type": "promptString",
+      "description": "Enter subcommand & arguments for lists.py (e.g. 'stats --elements 10,20,30,40' or 'demo'):",
       "default": "stats --elements 10,20,30,40,50"
     }
   ]

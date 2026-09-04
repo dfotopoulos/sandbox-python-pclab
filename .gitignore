@@ -30,6 +30,7 @@ htmlcov/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
+!.vscode/tasks-full.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
